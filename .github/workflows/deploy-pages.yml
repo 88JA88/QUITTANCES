@@ -18,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Renouveler le cache de l’application
+        run: |
+          sed -i "s/const CACHE_NAME = 'quittances-v[^']*';/const CACHE_NAME = 'quittances-${GITHUB_SHA}';/" dist/service-worker.js
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
