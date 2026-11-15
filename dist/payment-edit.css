@@ -5,6 +5,7 @@
 #paymentSection{padding-top:8px;padding-bottom:8px}#paymentSection .section-title{margin-bottom:4px}#paymentEntry{margin:0 0 10px;padding:5px;border:2px solid var(--accent)}#paymentSection .payment-form{gap:4px}#paymentSection label{line-height:1.05}#paymentSection input,#paymentSection select{height:23px;margin-top:1px;padding:2px 5px;font-size:15px;line-height:1}#paymentSection .payment-form button{height:23px;padding:2px 7px;line-height:1}#paymentSection .note{margin:2px 0 3px;line-height:1.05}#paymentSection th{padding:3px 6px;line-height:1}#paymentSection td{height:21px;padding:2px 6px;line-height:1}#paymentSection #payments .payment-edit{height:19px;padding:1px 3px;line-height:1}#paymentSection .payment-totals th{padding:4px 6px 6px;border-bottom:4px solid #fff;line-height:1}
 #paymentSection thead tr:not(.payment-totals) th{color:var(--accent)}
 #paymentSection #payments [data-field="date"],#paymentSection #payments [data-field="month"]{font-size:15px}
+#paymentEntry input,#paymentEntry select{height:27px;line-height:1.2}
 .recap-totals th{padding:4px 8px 6px;border-bottom:4px solid #fff;color:var(--ink);font-size:11px;font-variant-numeric:tabular-nums}.recap-totals th:first-child{text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
 .settings-grid{grid-template-columns:repeat(4,1fr)}
 @media(max-width:800px){.settings-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:470px){.settings-grid{grid-template-columns:1fr}}
