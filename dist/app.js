@@ -1,6 +1,7 @@
 const key = 'quittances-v1';
 const euro = n => +n ? new Intl.NumberFormat('fr-FR', {style:'currency', currency:'EUR'}).format(n) : '';
 const euroOrBlank = n => +n ? euro(n) : '';
+const amountValue = value => +String(value ?? '').replace(/[^\d,.-]/g,'').replace(',','.') || 0;
 const monthLabel = m => new Intl.DateTimeFormat('fr-FR', {month:'long', year:'numeric'}).format(new Date(`${m}-01T12:00:00`));
 const isoToday = () => new Date().toISOString().slice(0,10);
 const attributeValue = value => String(value ?? '').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
@@ -8,7 +9,7 @@ let state = JSON.parse(localStorage.getItem(key) || 'null') || {settings:{year:n
 let paymentDrafts = {};
 function save(){ localStorage.setItem(key, JSON.stringify(state)); }
 function backupFileName(){ return `quittances-sauvegarde-${new Date().toISOString().replace(/[-:]/g,'').replace(/\..+/, '')}.json`; }
-function storeSettingsForm(){ const next=Object.fromEntries(new FormData(document.querySelector('#settings'))); state.settings={...next,rent:+next.rent||0,charges:+next.charges||0,coefficient:+next.coefficient||100}; }
+function storeSettingsForm(){ const next=Object.fromEntries(new FormData(document.querySelector('#settings'))); state.settings={...next,rent:amountValue(next.rent),charges:amountValue(next.charges),coefficient:+next.coefficient||100}; }
 function downloadBackup(){
   storeSettingsForm(); save();
   const content=JSON.stringify({format:'quittances-backup',version:1,savedAt:new Date().toISOString(),data:state},null,2);
@@ -49,7 +50,7 @@ function renderRecap(ds,dueCumulative,paidCumulative,dueTotal,paidTotal){
 }
 function render(){
   document.querySelector('#today').textContent=new Intl.DateTimeFormat('fr-FR',{dateStyle:'long'}).format(new Date());
-  for(const [name,value] of Object.entries(state.settings)){ const input=document.querySelector(`[name="${name}"]`); if(input) input.value=value ?? ''; }
+  for(const [name,value] of Object.entries(state.settings)){ const input=document.querySelector(`[name="${name}"]`); if(input) input.value=name==='rent'||name==='charges'?euro(value):value ?? ''; }
   const ds=dates(), dueByMonth=ds.map(m=>scheduled(m).total), paidByMonth=ds.map(m=>paid(m));
   const dueCumulative=cumulative(dueByMonth), paidCumulative=cumulative(paidByMonth);
   const dueTotal=dueCumulative.at(-1)||0, paidTotal=paidCumulative.at(-1)||0;

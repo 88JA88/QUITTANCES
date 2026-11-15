@@ -4,7 +4,7 @@
 .payment-totals th{padding:4px 8px;border-bottom:1px solid var(--line);color:var(--ink);font-size:11px;font-variant-numeric:tabular-nums}.payment-totals th:first-child{text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
 #paymentSection{padding-top:8px;padding-bottom:8px}#paymentSection .section-title{margin-bottom:4px}#paymentEntry{margin:0 0 10px;padding:5px;border:2px solid var(--accent)}#paymentSection .payment-form{gap:4px}#paymentSection label{line-height:1.05}#paymentSection input,#paymentSection select{height:23px;margin-top:1px;padding:2px 5px;font-size:15px;line-height:1}#paymentSection .payment-form button{height:23px;padding:2px 7px;line-height:1}#paymentSection .note{margin:2px 0 3px;line-height:1.05}#paymentSection th{padding:3px 6px;line-height:1}#paymentSection td{height:21px;padding:2px 6px;line-height:1}#paymentSection #payments .payment-edit{height:19px;padding:1px 3px;line-height:1}#paymentSection .payment-totals th{padding:4px 6px 6px;border-bottom:4px solid #fff;line-height:1}
 #paymentSection thead tr:not(.payment-totals) th{color:var(--accent)}
-#paymentSection #payments [data-field="date"],#paymentSection #payments [data-field="month"]{font-size:15px}
+#paymentSection #paymentMonth{font-size:13px!important}#paymentSection #payments [data-field="date"]{font-size:13px!important}#paymentSection #payments [data-field="month"]{font-size:12px!important}
 #paymentEntry input,#paymentEntry select{height:27px;line-height:1.2}
 .recap-totals th{padding:4px 8px 6px;border-bottom:4px solid #fff;color:var(--ink);font-size:11px;font-variant-numeric:tabular-nums}.recap-totals th:first-child{text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
 .settings-grid{grid-template-columns:repeat(4,1fr)}
@@ -12,3 +12,5 @@
 #paymentSection .payment-total{color:var(--accent);font-weight:400}.recap-totals+tr th{color:var(--accent)}.recap-totals th:last-child,#recap td:last-child{color:var(--accent);font-weight:400}.balance.negative{color:var(--accent);font-weight:400}
 #paymentSection .editable-amount{cursor:text;outline:0}
 #paymentSection #payments .editable-amount{min-width:0;height:auto;margin:0;padding:2px 6px;font:inherit;line-height:1}
+.settings-grid label{color:#000;text-transform:uppercase;font-size:12px}
+.settings-grid input{color:#000;font-family:Georgia,serif;font-size:21px}
