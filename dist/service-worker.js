@@ -1,4 +1,4 @@
-const CACHE_NAME = 'quittances-v16';
+const CACHE_NAME = 'quittances-v17';
 const APP_FILES = ['./', './index.html', './style.css', './payment-edit.css', './app.js', './manifest.webmanifest', './assets/logo-ja-applications.png'];
 
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_FILES)).then(() => self.skipWaiting())));
