@@ -8,6 +8,7 @@
 #paymentEntry input,#paymentEntry select{height:27px;line-height:1.2}
 .recap-totals th{padding:4px 8px 6px;border-bottom:4px solid #fff;color:var(--ink);font-size:11px;font-variant-numeric:tabular-nums}.recap-totals th:first-child{text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
 .recap-totals .money,.recap-totals .balance{text-align:right}
+.payment-totals .money{text-align:right}
 .settings-grid{grid-template-columns:repeat(4,1fr)}
 @media(max-width:800px){.settings-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:470px){.settings-grid{grid-template-columns:1fr}}
 #paymentSection .payment-total{color:var(--accent);font-weight:400}.recap-totals+tr th{color:var(--accent)}.recap-totals th:last-child,#recap td:last-child{color:var(--accent);font-weight:400}.balance.negative{color:var(--accent);font-weight:400}
