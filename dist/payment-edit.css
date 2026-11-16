@@ -7,10 +7,12 @@
 #paymentSection #paymentMonth{font-size:13px!important}#paymentSection #payments [data-field="date"]{font-size:13px!important}#paymentSection #payments [data-field="month"]{font-size:12px!important}
 #paymentEntry input,#paymentEntry select{height:27px;line-height:1.2}
 .recap-totals th{padding:4px 8px 6px;border-bottom:4px solid #fff;color:var(--ink);font-size:11px;font-variant-numeric:tabular-nums}.recap-totals th:first-child{text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.recap-totals .money,.recap-totals .balance{text-align:right}
 .settings-grid{grid-template-columns:repeat(4,1fr)}
 @media(max-width:800px){.settings-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:470px){.settings-grid{grid-template-columns:1fr}}
 #paymentSection .payment-total{color:var(--accent);font-weight:400}.recap-totals+tr th{color:var(--accent)}.recap-totals th:last-child,#recap td:last-child{color:var(--accent);font-weight:400}.balance.negative{color:var(--accent);font-weight:400}
 #paymentSection .editable-amount{cursor:text;outline:0}
 #paymentSection #payments .editable-amount{min-width:0;height:auto;margin:0;padding:2px 6px;font:inherit;line-height:1}
 .settings-grid label{color:#000;text-transform:uppercase;font-size:12px}
-.settings-grid input{color:#000;font-family:Georgia,serif;font-size:21px}
+.settings-grid input{color:#000;font-family:Georgia,serif;font-size:15px}
+.tenant-name{width:40ch;max-width:100%;margin:0;font:20px Georgia,serif;color:#000}
